@@ -58,7 +58,7 @@ modulePomFile = os.path.join(basedir, 'modules.pom')
 with open(modulePomFile, 'w') as file_:
     file_.write(renderer.render(modulePom))
 
-# sys.exit(0)  
+sys.exit(0)  
 
 # running   mvn validate with appropriately configured shakuntala will upload dag to hub
 # hub then is able to calculate topological sort that can be downloaded
