@@ -84,3 +84,17 @@ optional arguments:
               modify the checkout.
 ```
 
+## config
+
+some vital configuration file have been saved in the `conf` directory for reference.
+
+- maven settings
+- nexus 
+- shakuntala
+
+## samples
+
+some generated scripts and topologica sort have been saved in the `generated` directory for reference.
+
+
+
