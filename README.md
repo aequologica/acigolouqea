@@ -1,6 +1,6 @@
 # acigolouqea
 
-```python
+```
 usage: CreateModulePom.py [-h] [-d [DIRECTORY]] [-a [ARTIFACTID]]
 
 optional arguments:
