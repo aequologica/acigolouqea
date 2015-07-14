@@ -12,5 +12,5 @@ python ./GenerateReleaseScript.py \
   --includes net.aequologica.neo:* \
   --includeProperties geppaequo.version \
   --phase release_finish
-  1>generate-release-script-for-$TOPO_DIR_NAME-cmd.log \
+  1>logs/generate-release-script-for-$TOPO_DIR_NAME-$(date -d "today" +"%Y%m%d%H%M").log \
   2>&1
