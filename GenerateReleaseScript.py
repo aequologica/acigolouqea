@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from os import getcwd, chdir, path
 from pathlib import Path
 from urllib.error import URLError

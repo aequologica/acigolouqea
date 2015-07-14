@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # from json import loads 
 from os import getcwd, chdir, path, environ
 from pathlib import Path
