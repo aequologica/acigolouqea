@@ -38,8 +38,7 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --includes [INCLUDES [INCLUDES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin
-                        /use-latest-versions-mojo.html
+                        cf. [versions-maven-plugin/use-latest-versions](http://mojo.codehaus.org/versions-maven-plugin/use-latest-versions-mojo.html)
   --excludes [EXCLUDES [EXCLUDES ...]]
                         cf. http://mojo.codehaus.org/versions-maven-plugin
                         /use-latest-versions-mojo.html
