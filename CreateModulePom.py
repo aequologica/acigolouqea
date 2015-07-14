@@ -8,15 +8,17 @@ import sys
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("--directory",
+parser.add_argument("-d",
+                    "--directory",
                     nargs='?',
                     default=".",
-                    help="optional directory containing all projects, as direct sub-directories, to be grouped in a module pom")
+                    help="optional directory containing all projects, as direct sub-directories, to be grouped in a module pom. Default is upper directory.")
 
-parser.add_argument("--artifactId",
+parser.add_argument("-a",
+                    "--artifactId",
                     nargs='?',
                     default="",
-                    help="optional module pom")
+                    help="optional extension to be suffixed to upper directory name as module pom artifactId. Default is empty string.")
 
 args = parser.parse_args()
 
