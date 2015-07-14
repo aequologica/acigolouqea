@@ -28,6 +28,8 @@ if basedir == '.':
     
 if artifactId == '':
     artifactId = pathlib.Path(basedir).name
+else:
+    artifactId = pathlib.Path(basedir).name+'.'+artifactId
     
 print("directory  : " + basedir+'\nartifactId : '+artifactId + '\n')
 
