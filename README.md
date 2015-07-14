@@ -38,16 +38,13 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --includes [INCLUDES [INCLUDES ...]]
-                        cf. [versions-maven-plugin/use-latest-versions](http://mojo.codehaus.org/versions-maven-plugin/use-latest-versions-mojo.html)
+                        cf. http://mojo.codehaus.org/versions-maven-plugin/use-latest-versions-mojo.html
   --excludes [EXCLUDES [EXCLUDES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin
-                        /use-latest-versions-mojo.html
+                        cf. http://mojo.codehaus.org/versions-maven-plugin/use-latest-versions-mojo.html
   --includeProperties [INCLUDEPROPERTIES [INCLUDEPROPERTIES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin
-                        /update-properties-mojo.html
+                        cf. http://mojo.codehaus.org/versions-maven-plugin/update-properties-mojo.html
   --excludeProperties [EXCLUDEPROPERTIES [EXCLUDEPROPERTIES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin
-                        /update-properties-mojo.html
+                        cf. http://mojo.codehaus.org/versions-maven-plugin/update-properties-mojo.html
   --project [PROJECT [PROJECT ...]]
                         projects to release. will release all projects
                         contained under directory if absent
@@ -67,8 +64,7 @@ optional arguments:
                         increment major version (default version increment is
                         patch); if both --minor and --major are present, major
                         wins.
-  --feature [FEATURE]   cf. https://bitbucket.org/atlassian/jgit-
-                        flow/wiki/goals/feature-start
+  --feature [FEATURE]   cf. https://bitbucket.org/atlassian/jgit-flow/wiki/goals/feature-start
 
 ```
 
