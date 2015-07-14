@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <offline>false</offline>
+
+    <mirrors>
+        <mirror>
+            <id>nexus</id>
+            <url>http://localhost:1082/nexus/content/groups/public/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>sonatype</id>
+            <repositories>
+                <repository>
+                    <id>sonatype-nexus-snapshots</id>
+                    <name>Sonatype Snpashots</name>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+        <activeProfile>sonatype</activeProfile>
+    </activeProfiles>
+
+    <pluginGroups>
+        <pluginGroup>com.google.code.sortpom</pluginGroup>
+        <pluginGroup>com.sap.research</pluginGroup>
+        <pluginGroup>external.atlassian.jgitflow</pluginGroup>
+        <pluginGroup>org.apache.tomcat.maven</pluginGroup>
+        <pluginGroup>org.sonatype.plugins</pluginGroup>
+        <pluginGroup>pl.project13.maven</pluginGroup>
+        <pluginGroup>fr.jcgay.maven.plugins</pluginGroup>
+    </pluginGroups>
+
+    <servers>
+        <server>
+            <id>gpg.passphrase</id>
+            <passphrase>${env.GPG_PASSPHRASE}</passphrase>
+        </server>
+        <server>
+            <id>sonatype-nexus-snapshots</id>
+            <username>${env.CI_DEPLOY_USERNAME}</username>
+            <password>${env.CI_DEPLOY_PASSWORD}</password>
+        </server>
+        <server>
+            <id>sonatype-nexus</id>
+            <username>${env.CI_DEPLOY_USERNAME}</username>
+            <password>${env.CI_DEPLOY_PASSWORD}</password>
+        </server>
+        <server>
+            <id>local_releases</id>
+            <username>deployment</username>
+            <password>deployment123</password>
+        </server>
+        <server>
+            <id>local_snapshots</id>
+            <username>deployment</username>
+            <password>deployment123</password>
+        </server>
+        <server>
+            <id>local-nexus</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>
+    </servers>
+</settings>
