@@ -56,7 +56,7 @@ optional arguments:
   --lifecycle [LIFECYCLE]
                         either SFSF (default), or SSFF [S=Start F=Finish].
   --developmentBranchName [DEVELOPMENTBRANCHNAME]
-                        either SFSF (default), or SSFF [S=Start F=Finish].
+                        default is 'develop'
   --minor               when preparing for next development iteration,
                         increment minor version (default version increment is
                         patch).
@@ -75,7 +75,7 @@ usage: GeoReleaseScript.py [-h] [--dryRun] [commands] [groupId]
 
 positional arguments:
   commands    file containing all commands to be run
-  groupId     will clean everything under this groupId in maven *local*
+  groupId     optional; will (try to ...) clean everything under this groupId in maven *local*
               repository
 
 optional arguments:
