@@ -60,7 +60,7 @@ with open(modulePomFile, 'w') as file_:
 
 sys.exit(0)  
 
-# running   mvn validate with appropriately configured shakuntala will upload dag to hub
+# running   mvn validate with appropriately configured shakuntala [https://github.com/aequologica/shakuntala] will upload dag to hub
 # hub then is able to calculate topological sort that can be downloaded
 
 def runCommand(command):
