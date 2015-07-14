@@ -38,13 +38,13 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --includes [INCLUDES [INCLUDES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin/use-latest-versions-mojo.html
+                        cf. http://www.mojohaus.org/versions-maven-plugin/use-latest-versions-mojo.html
   --excludes [EXCLUDES [EXCLUDES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin/use-latest-versions-mojo.html
+                        cf. http://www.mojohaus.org/versions-maven-plugin/use-latest-versions-mojo.html
   --includeProperties [INCLUDEPROPERTIES [INCLUDEPROPERTIES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin/update-properties-mojo.html
+                        cf. http://www.mojohaus.org/versions-maven-plugin/update-properties-mojo.html
   --excludeProperties [EXCLUDEPROPERTIES [EXCLUDEPROPERTIES ...]]
-                        cf. http://mojo.codehaus.org/versions-maven-plugin/update-properties-mojo.html
+                        cf. http://www.mojohaus.org/versions-maven-plugin/update-properties-mojo.html
   --project [PROJECT [PROJECT ...]]
                         projects to release. will release all projects
                         contained under directory if absent
