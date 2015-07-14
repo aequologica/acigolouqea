@@ -1,17 +1,13 @@
-from json import loads
 from os import getcwd, chdir, path
 from pathlib import Path
-from subprocess import check_call, CalledProcessError, Popen, PIPE
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 import argparse
 import json
 import pystache
-import re
 import semantic_version
 import sys
 import xml.etree.ElementTree as ET
-import shutil
 
 lifecycle = [
     'verify' ,
