@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("directory",
                     nargs='?',
-                    default="C:\\Users\\i051108\\Documents\\github.wdf.sap.corp.arimul2",
+                    default="C:\\Users\\i051108\\Documents\\github.aequologica.net",
                     help="directory containing all projects to be released")
 parser.add_argument("url",
                     nargs='?',
