@@ -10,7 +10,7 @@ python ./GenerateReleaseScript.py \
   $TOPO_DIR \
   file:topological-$TOPO_DIR_NAME.json \
   --includes net.aequologica.neo:* \
-  --includeProperties geppaequo.version \
+  --includeProperties geppaequo.version dagr.version \
   --phase release_finish
   1>logs/generate-release-script-for-$TOPO_DIR_NAME-$(date -d "today" +"%Y%m%d%H%M").log \
   2>&1
