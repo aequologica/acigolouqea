@@ -8,4 +8,4 @@ pushd $TOPO_DIR
 export TOPO_DIR_NAME=${PWD##*/}  
 mvn validate -f modules.pom
 popd
-curl -x http://proxy:8080 https://tebaldi051108trial.hanatrial.ondemand.com/dags/dag-$TOPO_DIR_NAME.json/topologicartifacts -o topological-$TOPO_DIR_NAME.json
+curl -x http://proxy:8080 https://tebaldi051108trial.hanatrial.ondemand.com/dagr-api/dags/dag-$TOPO_DIR_NAME.json/topologicartifacts -o topological-$TOPO_DIR_NAME.json
