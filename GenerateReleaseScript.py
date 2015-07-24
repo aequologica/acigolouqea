@@ -91,7 +91,7 @@ minor             = args.minor
 major             = args.major
 feature           = args.feature
 
-f0 = open(str(path.basename(basedir))+'.'+activeLifecycle+'.cmd','w')
+f0 = open(str(path.basename(basedir))+'-'+str(activePhases)+'-'+activeLifecycle+'.cmd','w')
 
 print('#', 'basedir           =', basedir                , file=f0)
 print('#', 'url               =', url                    , file=f0)

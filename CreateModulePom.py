@@ -46,7 +46,7 @@ class ModulePomFileTemplate(object):
     def artifactId(self):
         return artifactId
     def version(self):
-        return "1-SNAPSHOT"
+        return "0.0.0-SNAPSHOT"
     def modules(self):
         return get_immediate_subdirectories_with_pom_as_modules(basedir)
 
