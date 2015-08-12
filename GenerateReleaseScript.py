@@ -373,16 +373,20 @@ def increment(version, major=False, minor=False, patch=True):
 
 def toRelease(version):
     version = semantic_version.Version(str(version))
-    version.prerelease = None
+    version.build = None
     return version
 
 def toSnapshot(version):
     version = semantic_version.Version(str(version))
-    version.prerelease = 'SNAPSHOT',
-    return version
+    version.build = None
+    return version;
 
 def checkVersion(project, f3):
     version = getVersion(project)
+    wasSnapshot = False
+    if version.endswith('-SNAPSHOT'):
+        wasSnapshot = True
+        version = version[:-9]
     if not version :
         sys.exit()
     else :
@@ -395,11 +399,16 @@ def checkVersion(project, f3):
         else :
             n = toSnapshot(increment(v))
 
-        versions[project.name] = Three(str(v), str(r), str(n))
+        oldVersion = str(v)
+        newVersion = str(n)
+        if wasSnapshot:
+            oldVersion = oldVersion + '-SNAPSHOT'
+            newVersion = newVersion + '-SNAPSHOT'
+        versions[project.name] = Three(oldVersion, str(r), newVersion)
         print ('#', project.name, file=f3)
         print ('#', '\t', versions[project.name], file=f3)
         sys.stdout.flush()
-        return len(v.prerelease) > 0 and v.prerelease[0] == 'SNAPSHOT'
+        return wasSnapshot
 
 if activeProjects == None or len(activeProjects) > 1 :
     topologicalSort = getTopologicalSort(url)
