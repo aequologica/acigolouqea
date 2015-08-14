@@ -108,6 +108,8 @@ print('#', 'major             =', major                  , file=f0)
 
 ################################################################
 
+proxy = '-Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080 '
+
 clean_install_all_commands = [
     [ 'git', 'checkout', developmentBranchName ],
     [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off', 'clean', 'deploy', '-DskipTests'],
