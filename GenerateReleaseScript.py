@@ -108,7 +108,10 @@ print('#', 'major             =', major                  , file=f0)
 
 ################################################################
 
-proxy = '-Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080 '
+proxy = ' -Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080 '
+
+# e.g.
+# export MAVEN_OPTS=' -Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -Dhttps.proxyPort=8080 '
 
 clean_install_all_commands = [
     [ 'git', 'checkout', developmentBranchName ],
