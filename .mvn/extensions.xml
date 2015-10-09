@@ -3,6 +3,6 @@
   <extension>
     <groupId>net.aequologica.neo</groupId>
     <artifactId>shakuntala-core</artifactId>
-    <version>0.4.3</version>
+    <version>0.4.4</version>
   </extension>
 </extensions>
