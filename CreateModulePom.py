@@ -40,15 +40,20 @@ def get_immediate_subdirectories_with_pom_as_modules(directory):
             if os.path.isdir(os.path.join(directory, name))
             and pathlib.Path(os.path.join(directory, name), 'pom.xml').exists()]
     
+def get_subdirectories_with_pom_as_modules(directory):
+    return [{'module':name} for name, dirs, files in os.walk(".")
+            if os.path.isdir(name)
+            and pathlib.Path(name, 'pom.xml').exists()]
+
 class ModulePomFileTemplate(object):
     def groupId(self):
-        return "net.aequologica.neo"
+        return "com.sap.prd"
     def artifactId(self):
         return artifactId
     def version(self):
         return "0.0.0-SNAPSHOT"
     def modules(self):
-        return get_immediate_subdirectories_with_pom_as_modules(basedir)
+        return get_subdirectories_with_pom_as_modules(basedir)
 
 modulePom = ModulePomFileTemplate()
 renderer = pystache.Renderer()
