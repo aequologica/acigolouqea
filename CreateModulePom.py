@@ -47,7 +47,7 @@ def get_subdirectories_with_pom_as_modules(directory):
 
 class ModulePomFileTemplate(object):
     def groupId(self):
-        return "com.sap.prd"
+        return "net.aequologica.neo"
     def artifactId(self):
         return artifactId
     def version(self):
