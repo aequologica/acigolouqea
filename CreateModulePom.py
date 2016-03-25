@@ -41,7 +41,7 @@ def get_immediate_subdirectories_with_pom_as_modules(directory):
             and pathlib.Path(os.path.join(directory, name), 'pom.xml').exists()]
     
 def get_subdirectories_with_pom_as_modules(directory):
-    return [{'module':name} for name, dirs, files in os.walk(".")
+    return [{'module':name} for name, dirs, files in os.walk(directory)
             if os.path.isdir(name)
             and pathlib.Path(name, 'pom.xml').exists()]
 
@@ -53,7 +53,7 @@ class ModulePomFileTemplate(object):
     def version(self):
         return "0.0.0-SNAPSHOT"
     def modules(self):
-        return get_subdirectories_with_pom_as_modules(basedir)
+        return get_immediate_subdirectories_with_pom_as_modules(basedir)
 
 modulePom = ModulePomFileTemplate()
 renderer = pystache.Renderer()
