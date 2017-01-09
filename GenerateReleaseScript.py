@@ -115,35 +115,35 @@ proxy = ' -Dhttp.proxyHost=proxy -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy -
 
 clean_install_all_commands = [
     [ 'git', 'checkout', developmentBranchName ],
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off', 'clean', 'deploy', '-DskipTests'],
+    [ 'mvn', '-Prelease', '-Dshakuntala=off', 'clean', 'deploy', '-DskipTests'],
     [ 'git', 'checkout', 'master' ],
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off', 'clean', 'install', '-DskipTests'],
+    [ 'mvn', '-Prelease', '-Dshakuntala=off', 'clean', 'install', '-DskipTests'],
     [ 'git', 'checkout', developmentBranchName ] 
 ]
 
 clean_install_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off', 'clean', 'install', '-DskipTests']
+    [ 'mvn', '-Prelease', '-Dshakuntala=off', 'clean', 'install', '-DskipTests']
 ]
 
 clean_deploy_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off', 'clean', 'deploy', '-DskipTests']
+    [ 'mvn', '-Prelease', '-Dshakuntala=off', 'clean', 'deploy', '-DskipTests']
 ]
 
 version_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+    [ 'mvn', '-Prelease', '-Dshakuntala=off'
            , '-DexcludeReactor=true'
            , 'versions:update-parent'
            , 'versions:update-properties'   , '{{includePropertiesArgument}}'
                                             , '{{excludePropertiesArgument}}'
            , 'versions:use-latest-versions' , '{{includesListArgument}}'
                                             , '{{excludesListArgument}}' ]
-   ,[ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+   ,[ 'mvn', '-Prelease', '-Dshakuntala=off'
            , 'scm:checkin'                  , '-Dmessage=hooked_to_release_artifacts'
                                             , '-DpushChanges=false' ]
 ]
 
 version_allow_snapshots_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+    [ 'mvn', '-Prelease', '-Dshakuntala=off'
            , '-DexcludeReactor=true'
            , '-DallowSnapshots=true'
            , 'versions:update-parent'       
@@ -151,13 +151,13 @@ version_allow_snapshots_commands = [
                                             , '{{excludePropertiesArgument}}'
            , 'versions:use-latest-versions' , '{{includesListArgument}}'
                                             , '{{excludesListArgument}}' ]
-   ,[ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+   ,[ 'mvn', '-Prelease', '-Dshakuntala=off'
            , 'scm:checkin'                  , '-Dmessage=hooked_to_snapshot_artifacts'
                                             , '-DpushChanges=false']
 ]
 
 start_release_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+    [ 'mvn', '-Prelease', '-Dshakuntala=off'
            , '-DallowUntracked=true'
            , 'jgitflow:{{releaseOrFeature}}-start'       
                                             , '-DfeatureName={{feature}}'
@@ -166,7 +166,7 @@ start_release_commands = [
 ]
 
 start_release_commands_allow_snapshots = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+    [ 'mvn', '-Prelease', '-Dshakuntala=off'
            , '-DallowUntracked=true'
            , '-DallowSnapshots'
            , 'jgitflow:{{releaseOrFeature}}-start'       
@@ -177,12 +177,12 @@ start_release_commands_allow_snapshots = [
 ]
 
 finish_release_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+    [ 'mvn', '-Prelease', '-Dshakuntala=off'
            , 'jgitflow:{{releaseOrFeature}}-finish']
 ]
 
 finish_release_commands_allow_snapshots = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off'
+    [ 'mvn', '-Prelease', '-Dshakuntala=off'
            , '-DallowSnapshots'
            , 'jgitflow:{{releaseOrFeature}}-finish']
 ]
@@ -220,7 +220,7 @@ publish_commands = [
 ]
 
 prepare_next_iteration_commands = [
-    [ 'mvn', '-Psonatype-oss-release', '-Dshakuntala=off', 'clean', 'install', '-DskipTests' ]
+    [ 'mvn', '-Prelease', '-Dshakuntala=off', 'clean', 'install', '-DskipTests' ]
    ,[ 'git', 'push', 'origin', developmentBranchName ]
 ]
 
